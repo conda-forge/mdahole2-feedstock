@@ -10,7 +10,7 @@ source:
   sha256: 1af9c3bb6f07f6266aeb038fef5a1fa63dafb70a466dcdfe44b6627e8d9aec59
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 test:
@@ -23,23 +23,24 @@ test:
 
 outputs:
   - name: mdahole2-base
-    script: build_base.sh
+    script: build_base.bat  # [win]
+    script: build_base.sh  # [not win]
     requirements:
       host:
-        - python >=3.9
+        - python >=3.9,<3.13
         - setuptools >=40.9.0
         - wheel
         - pip
       run:
-        - python >=3.9
+        - python >=3.9,<3.13
         - MDAnalysis >=2.0.0
         - numpy >=1.22.3
   - name: mdahole2
     requirements:
       host:
-        - python >=3.9
+        - python >=3.9,<3.13
       run:
-        - python >=3.9
+        - python >=3.9,<3.13
         - hole2
         - {{ pin_subpackage('mdahole2-base', exact=True) }}
 
