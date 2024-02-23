@@ -25,6 +25,8 @@ outputs:
   - name: mdahole2-base
     script: build_base.sh
     requirements:
+      build:
+        noarch: python
       host:
         - python >=3.9,<3.13
         - setuptools >=40.9.0
@@ -36,6 +38,8 @@ outputs:
         - numpy >=1.22.3
   - name: mdahole2
     requirements:
+      build:
+        noarch: python
       host:
         - python >=3.9,<3.13
       run:
