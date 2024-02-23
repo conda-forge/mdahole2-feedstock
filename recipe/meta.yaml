@@ -27,12 +27,12 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.9,<3.13
+        - python >=3.9
         - setuptools >=40.9.0
         - wheel
         - pip
       run:
-        - python >=3.9,<3.13
+        - python >=3.9
         - MDAnalysis >=2.0.0
         - numpy >=1.22.3
   - name: mdahole2
