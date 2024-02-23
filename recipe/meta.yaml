@@ -23,8 +23,7 @@ test:
 
 outputs:
   - name: mdahole2-base
-    script: build_base.bat  # [win]
-    script: build_base.sh  # [not win]
+    script: build_base.sh
     requirements:
       host:
         - python >=3.9,<3.13
