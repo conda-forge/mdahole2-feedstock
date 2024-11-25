@@ -40,9 +40,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.9,<3.13
+        - python >=3.9
       run:
-        - python >=3.9,<3.13
+        - python >=3.9
         - hole2
         - {{ pin_subpackage('mdahole2-base', exact=True) }}
 
@@ -54,7 +54,7 @@ about:
     the HOLE suite of tools to analyze an ion channel pore or
     transporter pathway as a function of time or arbitrary
     order parameters.
-  license: GPL-3.0-or-later
+  license: LGPL-2.1-or-later
   license_file: LICENSE
   doc_url: https://mdanalysis.org/mdahole2
   dev_url: https://github.com/MDAnalysis/mdahole2
