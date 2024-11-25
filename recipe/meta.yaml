@@ -1,5 +1,5 @@
 {% set name = "mdahole2" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1af9c3bb6f07f6266aeb038fef5a1fa63dafb70a466dcdfe44b6627e8d9aec59
+  sha256: 39150588b9bc07ebc176bac30d9c3b0bd25003e2e2eac24b622f2a10e5352a1f
 
 build:
-  number: 1
+  number: 0
 
 test:
   imports:
@@ -40,9 +40,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.9,<3.13
+        - python >=3.9
       run:
-        - python >=3.9,<3.13
+        - python >=3.9
         - hole2
         - {{ pin_subpackage('mdahole2-base', exact=True) }}
 
@@ -54,7 +54,7 @@ about:
     the HOLE suite of tools to analyze an ion channel pore or
     transporter pathway as a function of time or arbitrary
     order parameters.
-  license: GPL-3.0-or-later
+  license: LGPL-2.1-or-later
   license_file: LICENSE
   doc_url: https://mdanalysis.org/mdahole2
   dev_url: https://github.com/MDAnalysis/mdahole2
