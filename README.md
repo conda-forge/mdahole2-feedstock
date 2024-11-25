@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mdahole2-feedst
 
 Home: https://github.com/MDAnalysis/mdahole2
 
-Package license: GPL-3.0-or-later
+Package license: LGPL-2.1-or-later
 
 Summary: An MDAnalysis toolkit interfacing with HOLE
 
