@@ -1,6 +1,10 @@
 {% set name = "mdahole2" %}
 {% set version = "0.5.0" %}
 
+# set minimal python version according to the package (override global python_min)
+# see https://github.com/MDAnalysis/mdahole2/blob/main/pyproject.toml
+{% set python_min = "3.10" %}
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
