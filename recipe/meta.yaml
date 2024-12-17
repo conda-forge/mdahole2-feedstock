@@ -1,16 +1,20 @@
 {% set name = "mdahole2" %}
 {% set version = "0.5.0" %}
 
+# set minimal python version according to the package (override global python_min)
+# see https://github.com/MDAnalysis/mdahole2/blob/main/pyproject.toml
+{% set python_min = "3.10" %}
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 39150588b9bc07ebc176bac30d9c3b0bd25003e2e2eac24b622f2a10e5352a1f
 
 build:
-  number: 0
+  number: 1
 
 test:
   imports:
@@ -27,12 +31,12 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.9
+        - python {{ python_min }}
         - setuptools >=40.9.0
         - wheel
         - pip
       run:
-        - python >=3.9
+        - python >={{ python_min }}
         - MDAnalysis >=2.0.0
         - numpy >=1.22.3
   - name: mdahole2
@@ -40,9 +44,9 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python >=3.9
+        - python {{ python_min }}
       run:
-        - python >=3.9
+        - python >={{ python_min }}
         - hole2
         - {{ pin_subpackage('mdahole2-base', exact=True) }}
 
